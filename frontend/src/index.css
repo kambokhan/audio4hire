@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+/* || VARIABLES */
+
+:root {
+  /* COLORS */
+  --BGCOLOR: whitesmoke;
+  --BORDER-COLOR: #000;
+  --COLOR: #000;
+  --ERROR: firebrick;
+  --INACTIVE: gray;
+  --LINK-COLOR: black;
+  --LINK-HOVER: gray;
+  --HEADER-BGCOLOR: rgb(59, 118, 177);
+  --HEADER-COLOR: whitesmoke;
+}
+
+/* || UTILITY CLASSES */
+.errmsg {
+  display: inline-block;
+  background-color: var(--TABLE-BGCOLOR);
+  color: var(--ERROR);
+  padding: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.errmsg a:any-link {
+  color: var(--ERROR);
+  text-decoration: underline;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.icon-button {
+  width: 48px;
+  height: 48px;
+  font-size: 2.5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--COLOR);
+  display: grid;
+  place-content: center;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  transform: scale(1.2);
+}
+
+.icon-button[disabled] {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.centre {
+  text-align: center;
+}
+
+.link-reset {
+  text-decoration: none;
+  color: var(--COLOR);
+}
+
+/* || GENERAL STYLES */
+
+body {
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+  background-color: var(--BGCOLOR);
+  color: var(--COLOR);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  /* React root div */
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+a,
+button a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.logo a,
+.header-menu button a:visited {
+  color: var(--HEADER-COLOR);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--LINK-HOVER);
+}
+
+main {
+  flex-grow: 1;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+}
+
+.main-centre {
+  padding: 2rem;
+}
+
+h1.centre {
+  margin: 1rem 1rem 3rem 1rem;
+}
+
+.section-left {
+  padding: 1rem;
+}
+
+.section-right {
+  resize: horizontal;
+}
+
+.section-left,
+.section-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  color: var(--HEADER-COLOR);
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
+/* || HEADER AND FOOTER STYLES */
+header {
+  position: static;
+  top: 0;
+  width: 100%;
+  padding: 0 0.5em;
+  background-color: var(--HEADER-BGCOLOR);
+}
+
+nav {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-menu button {
+  background: none;
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+.header a {
+  color: whitesmoke;
+}
+
+footer {
+  position: static;
+  bottom: 0;
+  text-align: center;
+  background-color: var(--HEADER-BGCOLOR);
+  color: var(--HEADER-COLOR);
+}
+
+/* || PAGES */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-field-textbox {
+  margin: 2rem;
+  width: 50%;
+}
+
+.login-form-input {
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 300px;
+  height: auto;
+}
+
+/* || SEARCH RESULTS GRID */
+
+.results-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem;
+  /* if width < 1280, switch to 2 columns */
+  /* if width < 500, switch to 1 column */
+}
+
+.grid-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: min(100%, 300px);
+  height: 300px;
+  box-shadow: 0px 5px 10px 1px gray;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.grid-cell-image-container img {
+  height: 200px;
+}
+
+/* .grid-cell-image {
+  width: 100%;
+  min-height: auto;
+  border-radius: 10%;
+  object-fit: cover;
+} */
+
+.grid-cell-info {
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.grid-cell-description {
+  padding: 1rem 1rem 0 1rem;
+  font-size: 1rem;
+  color: gray;
+}
+
+/* || MAP */
+
+.map-container {
+  height: "100vh";
+  width: "100%";
+}
+
+/* || LISTING PAGE */
+
+.listing-page-container {
+  display: flex;
+  padding: 1rem;
+}
+
+.listing-page-carroussel img {
+  width: 450px;
+  height: 450px;
+}
+
+.listing-page-info {
+  padding: 1rem;
+}
+
+.listing-page-caption {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.listing-page-description {
+  font-size: 1.1rem;
+  margin: 2rem;
+}
+
+.contact-info {
+  padding: 1rem;
+}
+
+/* || USER PAGE */
+
+.user-info-container {
+  display: flex;
+  padding: 1rem;
+}
+
+.user-avatar img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.user-page-info {
+  padding: 1rem;
+}
+
+.user-caption {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-listings {
+  font-size: 1.1rem;
+  margin: 2rem;
+}
+
+/* || CARROUSSEL */
+
+.carroussel-img {
+  width: 100%;
+  min-height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.carroussel-btn {
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 50ms ease-in-out;
+}
+
+.carroussel-btn:hover {
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.relative {
+  position: relative;
+}
+
+.chevron {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+/* || MARKER STYLES */
+
+.advanced-marker-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: border 0.1s ease;
+}
+
+.advanced-marker-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.advanced-marker-price {
+  background-color: rgb(59, 118, 177);
+  color: #fff;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 2px;
+  font-size: 12px;
+}
