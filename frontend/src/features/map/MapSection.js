@@ -1,13 +1,15 @@
 import React from 'react'
+
 import {
     APIProvider, Map
 } from "@vis.gl/react-google-maps"
 import MarkerContainer from './MarkerContainer'
+
 const MapSection = ({ listing, listings, isSuccess, isLoading, searchText, hoveredListingId, latitude, longitude, setLatitude, setLongitude }) => {
     const initialPosition = { lat: 42.69, lng: 23.31 }
 
     return (
-        <APIProvider apiKey='AIzaSyA7DQDhW8Zb8rnExGXbGSbXfGZVskT9RwA'>
+        <APIProvider apiKey={process.env.REACT_APP_GOOGLE_API_KEY}>
             <Map
                 defaultZoom={12}
                 defaultCenter={initialPosition}
